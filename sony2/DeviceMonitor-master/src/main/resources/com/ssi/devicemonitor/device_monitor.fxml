@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.Spinner?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/20.0.1" xmlns:fx="http://javafx.com/fxml/1">
+    <children>
+        <ListView fx:id="deviceListView" layoutX="45.0" layoutY="46.0" prefHeight="308.0" prefWidth="205.0" />
+        <TextField fx:id="deviceNameTextField" layoutX="277.0" layoutY="46.0" prefWidth="222.0" />
+        <Button fx:id="addDeviceButton" layoutX="277.0" layoutY="84.0" mnemonicParsing="false" onAction="#addDevice" text="Add Device" />
+      <RadioButton fx:id="softwareButton" layoutX="362.0" layoutY="88.0" mnemonicParsing="false" selected="true" text="software device">
+         <toggleGroup>
+            <ToggleGroup fx:id="divices" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="hardwareButton" layoutX="476.0" layoutY="88.0" mnemonicParsing="false" text="hardware device" toggleGroup="$divices" />
+      <ChoiceBox fx:id="manufacturer" layoutX="347.0" layoutY="125.0" prefHeight="25.0" prefWidth="238.0" />
+      <Label layoutX="256.0" layoutY="129.0" prefHeight="17.0" prefWidth="77.0" text="manufacturer: " />
+      <Spinner fx:id="versionSpinner" layoutX="348.0" layoutY="164.0" prefHeight="25.0" prefWidth="238.0" />
+      <Label layoutX="288.0" layoutY="168.0" prefHeight="17.0" prefWidth="55.0" text="version:" />
+      <Label layoutX="256.0" layoutY="200.0" prefHeight="17.0" prefWidth="104.0" text="location(hardware):" />
+      <RadioButton fx:id="computer1Button" layoutX="379.0" layoutY="200.0" mnemonicParsing="false" selected="true" text="computer1">
+         <toggleGroup>
+            <ToggleGroup fx:id="locations" />
+         </toggleGroup>
+      </RadioButton>
+      <RadioButton fx:id="computer2Button" layoutX="467.0" layoutY="200.0" mnemonicParsing="false" text="computer2" toggleGroup="$locations" />
+      <Label layoutX="256.0" layoutY="229.0" prefHeight="17.0" prefWidth="135.0" text="macAddress(hardware):" />
+      <ChoiceBox fx:id="macAddress" layoutX="402.0" layoutY="225.0" prefHeight="25.0" prefWidth="176.0" />
+      <DatePicker fx:id="datePicker" layoutX="403.0" layoutY="261.0" prefHeight="25.0" prefWidth="79.0" promptText="choose date:" />
+      <Label layoutX="256.0" layoutY="265.0" prefHeight="17.0" prefWidth="143.0" text="installation date(software):" />
+      <Spinner fx:id="timeSpinner" layoutX="525.0" layoutY="261.0" prefHeight="25.0" prefWidth="51.0" />
+      <Label fx:id="commentsLabel" layoutX="26.0" layoutY="369.0" prefHeight="17.0" prefWidth="290.0" textFill="RED">
+         <font>
+            <Font size="18.0" />
+         </font></Label>
+      <TextArea fx:id="dataField" layoutX="349.0" layoutY="295.0" prefHeight="68.0" prefWidth="238.0" />
+      <Label layoutX="315.0" layoutY="295.0" prefHeight="17.0" prefWidth="34.0" text="data:" />
+      <Button fx:id="clearButton" layoutX="451.0" layoutY="370.0" mnemonicParsing="false" onAction="#clearData" text="CLEAR" />
+      <Label alignment="TOP_LEFT" layoutX="490.0" layoutY="265.0" prefHeight="17.0" prefWidth="34.0" text="hour:" />
+      <Button fx:id="updateTimeButton" alignment="CENTER" layoutX="80.0" layoutY="14.0" mnemonicParsing="false" onAction="#showUpdateTimeDialog" prefHeight="25.0" prefWidth="135.0" text="show update time" />
+    </children>
+</AnchorPane>
